@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website</title>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <div id="content" >
+    <h1 style="color: black;">Welcome to My Website</h1>
+<nav>
+  <a href="#" id="home-link">Home</a>
+  <a href="#" id="about-link">About</a>
+  <a href="#" id="contact-link">Contact</a>
+</nav>
+<div id="home-content">
+
+    <p>Welcome to my Home Egypt.</p>
+
+      <video width="700" height="340" controls>
+        <source src="https://cdn.pixabay.com/video/2022/10/16/135131-761273439_large.mp4" type="video/mp4">
+      </video>
+  <hr>
+      <audio controls style="background-color: brown;color: #f80909;">
+        <source src="https://cdn.pixabay.com/video/2020/01/05/30902-383991325_large.mp4" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+      
+  </div>
+ 
+  <section>
+    <div id="about-content" class="hidden">
+      <article>
+        <h2>About Me</h2>
+        <p style="color: black;">My name is Mona Fakhri. I am a student in the computer science program at Cairo University, interested in analyzing biological data for bioinformatics. I use the R programming language and Linux operating system for next-generation data analysis. I am also interested in building machine learning models using Python and TensorFlow. I have a great interest in front-end development and have implemented many projects. Currently, I am focusing on my studies.</p>
+      </article>
+      <hr>
+      <aside>
+     
+        <ul id="posts">
+          <li class="post-box">
+            <h2>I am a university student from Egypt living in Cairo Governorate. I study computer science and work as a front-end developer.</h2>
+          </li>
+          <li class="post-box">
+            <h2>Egypt is a beautiful country where religions meet and it is the source of civilizations.</h2>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+<section>
+  <div id="contact-content" class="hidden" style="color: black;">
+    <h1>Contact Us</h1>
+<form>
+  <label for="fullname">Full Name:</label><br>
+  <input type="text" id="fullname" name="fullname" required><br><br>
+  
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+  
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message" rows="4" required></textarea><br><br>
+  
+  <input type="submit" value="Submit">
+</form>
+<ul class="Contact" style="color: black;">
+  <li>
+    <a href="https://www.facebook.com/treetrunkbistro" class="label-2 footer-link hover-underline">Facebook</a>
+  </li>
+  <li>
+    <a href="https://www.instagram.com/treetrunk_korbaview/?fbclid=IwAR0n5vz2eWXuMgY8_TPT0HdAGgQcv_anfmTI0fIPs5Cd64YniYPfznZSMeo" class="label-2 footer-link hover-underline">Instagram</a>
+  </li>
+ 
+  <li>
+    <a href="sherif.soliman87@gmail.com" class="label-2 footer-link hover-underline"> Email</a>
+  </li>
+  
+</ul>
+
+</section>
+
+  </div>
+  <time datetime="2024-09-01">September 1, 2024</time>
+
+<meter value="70" min="0" max="100">70%</meter>
+<mark> highlighted .</mark>
+<progress value="50" max="100">80%</progress>
+
+<footer>
+    <p>&copy; 2024 mona</p>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const posts = document.querySelectorAll("#posts li");
+      let currentIndex = 0;
+
+      function togglePosts() {
+        posts.forEach((post, index) => {
+          if (index === currentIndex) {
+            post.style.display = "block";
+          } else {
+            post.style.display = "none";
+          }
+        });
+
+        currentIndex = (currentIndex + 1) % posts.length;
+        setTimeout(togglePosts, 5000); 
+      }
+
+      togglePosts();
+    });
+document.addEventListener("DOMContentLoaded", function() {
+  const homeLink = document.getElementById("home-link");
+  const aboutLink = document.getElementById("about-link");
+  const contactLink = document.getElementById("contact-link");
+  const homeContent = document.getElementById("home-content");
+  const aboutContent = document.getElementById("about-content");
+  const contactContent = document.getElementById("contact-content");
+
+  homeLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    homeContent.classList.remove("hidden");
+    aboutContent.classList.add("hidden");
+    contactContent.classList.add("hidden");
+  });
+
+  aboutLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    homeContent.classList.add("hidden");
+    aboutContent.classList.remove("hidden");
+    contactContent.classList.add("hidden");
+  });
+
+  contactLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    homeContent.classList.add("hidden");
+    aboutContent.classList.add("hidden");
+    contactContent.classList.remove("hidden");
+  });
+  
+});
+</script>
+</body>
+</html>
+<style>
+   .hidden {
+    display: none;
+  }
+  body {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("https://i.pinimg.com/originals/d8/1d/06/d81d06633bda3ef37e2eb6bc1bc178f2.jpg");
+  }
+  nav {
+    margin-top: 10px;
+  }
+  nav a {
+    margin: 0 10px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 90px;
+    text-align: center; 
+    font-weight: bold;
+    font-family: "Satisfy", sans-serif;
+    color: rgb(245, 242, 240);
+  }
+  #content {
+    text-align: center;
+    padding: 50px;
+    border: 5px solid #cb03fd;
+    border-radius: 10px;
+    background-color: rgb(246, 194, 194);
+    margin-top: 20px;
+    color: #ffffff;
+  }
+  
+  .post-box {
+    border: 6px solid #fffefe;
+    padding: 100px;
+    margin-bottom: 100px;
+    background-image: url("https://cdn.pixabay.com/photo/2014/09/07/12/42/autumn-437769_1280.jpg");
+  }
+ 
+</style>
